@@ -1,11 +1,11 @@
 <template>
 	<main>
-		<BookingView />
+		main
 	</main>
 </template>
 
 <script setup lang="ts">
-import BookingView from '@/components/public/BookingView.vue'
+// import BookingView from '@/components/public/BookingView.vue'
 
 
 definePageMeta({

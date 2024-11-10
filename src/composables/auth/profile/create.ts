@@ -39,7 +39,7 @@ export const useCreateProfile = () => {
 			const res = await callFirebaseFunction('createUserProfileForBooking', sent_date) as any
 			if (res.success) {
 				setUserProfile(sent_date)
-				useRouter().push('/booking-types')
+				useRouter().push('/products')
 			} else {
 				useAlert().openAlert({ type: 'ERROR', msg: res.msg })
 				loading.value = false
@@ -64,16 +64,6 @@ export const useCreateProfile = () => {
 	}
 }
 
-
-const createUserProfile = async (sent_data: any) => {
-			const { data, error } = await useFetch('/api/createUserProfile', {
-    method: 'POST',
-    body: sent_data
-			})
-
-
-	return { success: data.value?.success, msg: data.value!.msg }
-}
 
 
 export const useUsername = () => {
